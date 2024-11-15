@@ -7,7 +7,7 @@ namespace ProjetoCinemaAthon.Models
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "Título (Teste)")]
+        [Display(Name = "Título")]
         public string? Titulo { get; set; }
 
         [Display(Name = "Data de Lançamento")]

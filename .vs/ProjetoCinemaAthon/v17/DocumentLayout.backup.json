@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|e:\\onedrive\\athon\\4ads\\asp net\\projetocinemaathon\\controllers\\cadastroatorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:controllers\\cadastroatorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|e:\\onedrive\\athon\\4ads\\asp net\\projetocinemaathon\\controllers\\cadastrogeneroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:controllers\\cadastrogeneroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|e:\\onedrive\\athon\\4ads\\asp net\\projetocinemaathon\\controllers\\registrarfilmescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:controllers\\registrarfilmescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|e:\\onedrive\\athon\\4ads\\asp net\\projetocinemaathon\\models\\vinculoatorpersonagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:models\\vinculoatorpersonagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|e:\\onedrive\\athon\\4ads\\asp net\\projetocinemaathon\\models\\vinculofilmegenero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:models\\vinculofilmegenero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|e:\\onedrive\\athon\\4ads\\asp net\\projetocinemaathon\\models\\vinculofilmeator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:models\\vinculofilmeator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|e:\\onedrive\\athon\\4ads\\asp net\\projetocinemaathon\\models\\registrarfilme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:models\\registrarfilme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,14 +43,6 @@
       "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:models\\cadastrogenero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|e:\\onedrive\\athon\\4ads\\asp net\\projetocinemaathon\\models\\vinculofilmeator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:models\\vinculofilmeator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|e:\\onedrive\\athon\\4ads\\asp net\\projetocinemaathon\\models\\vinculofilmegenero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:models\\vinculofilmegenero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|e:\\onedrive\\athon\\4ads\\asp net\\projetocinemaathon\\models\\contato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:models\\contato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -38,11 +54,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CadastroAtoresController.cs",
+              "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Controllers\\CadastroAtoresController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CadastroAtoresController.cs",
+              "ToolTip": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Controllers\\CadastroAtoresController.cs",
+              "RelativeToolTip": "Controllers\\CadastroAtoresController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T23:13:13.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CadastroGenerosController.cs",
+              "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Controllers\\CadastroGenerosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CadastroGenerosController.cs",
+              "ToolTip": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Controllers\\CadastroGenerosController.cs",
+              "RelativeToolTip": "Controllers\\CadastroGenerosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T23:11:22.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegistrarFilmesController.cs",
+              "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Controllers\\RegistrarFilmesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RegistrarFilmesController.cs",
+              "ToolTip": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Controllers\\RegistrarFilmesController.cs",
+              "RelativeToolTip": "Controllers\\RegistrarFilmesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T23:09:10.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VinculoAtorPersonagem.cs",
+              "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Models\\VinculoAtorPersonagem.cs",
+              "RelativeDocumentMoniker": "Models\\VinculoAtorPersonagem.cs",
+              "ToolTip": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Models\\VinculoAtorPersonagem.cs",
+              "RelativeToolTip": "Models\\VinculoAtorPersonagem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T22:53:59.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Vinculo.cs",
               "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Models\\Vinculo.cs",
               "RelativeDocumentMoniker": "Models\\Vinculo.cs",
@@ -50,12 +118,11 @@
               "RelativeToolTip": "Models\\Vinculo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T03:38:29.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T03:38:29.713Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "Contato.cs",
               "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Models\\Contato.cs",
               "RelativeDocumentMoniker": "Models\\Contato.cs",
@@ -67,31 +134,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "VinculoFilmeGenero.cs",
               "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Models\\VinculoFilmeGenero.cs",
               "RelativeDocumentMoniker": "Models\\VinculoFilmeGenero.cs",
               "ToolTip": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Models\\VinculoFilmeGenero.cs",
               "RelativeToolTip": "Models\\VinculoFilmeGenero.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T03:29:11.653Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "VinculoFilmeAtor.cs",
               "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Models\\VinculoFilmeAtor.cs",
               "RelativeDocumentMoniker": "Models\\VinculoFilmeAtor.cs",
               "ToolTip": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Models\\VinculoFilmeAtor.cs",
               "RelativeToolTip": "Models\\VinculoFilmeAtor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T03:28:44.239Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "RegistrarFilme.cs",
               "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Models\\RegistrarFilme.cs",
               "RelativeDocumentMoniker": "Models\\RegistrarFilme.cs",
@@ -99,12 +166,11 @@
               "RelativeToolTip": "Models\\RegistrarFilme.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T03:28:23.769Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T03:28:23.769Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "CadastroGenero.cs",
               "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Models\\CadastroGenero.cs",
               "RelativeDocumentMoniker": "Models\\CadastroGenero.cs",
@@ -116,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "CadastroAtor.cs",
               "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Models\\CadastroAtor.cs",
               "RelativeDocumentMoniker": "Models\\CadastroAtor.cs",
@@ -124,8 +190,7 @@
               "RelativeToolTip": "Models\\CadastroAtor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T03:27:33.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T03:27:33.224Z"
             }
           ]
         }

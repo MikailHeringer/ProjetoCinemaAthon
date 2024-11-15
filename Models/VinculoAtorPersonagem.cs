@@ -1,10 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ProjetoCinemaAthon.Models
+﻿namespace ProjetoCinemaAthon.Models
 {
-    public class VinculoFilmeAtor
+    public class VinculoAtorPersonagem
     {
         public int Id { get; set; }
+        public int NomePersonagem { get; set; }
         public int RegistrarFilmeId { get; set; }
         public int CadastroAtorId { get; set; }
 

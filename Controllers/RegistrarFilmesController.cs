@@ -46,6 +46,8 @@ namespace ProjetoCinemaAthon.Controllers
         // GET: RegistrarFilmes/Create
         public IActionResult Create()
         {
+            ViewData["DadosGeneros"] = new SelectList(_context.CadastroGenero, "Id", "Nome");
+            ViewData["DadosAtor"] = new SelectList(_context.CadastroAtor, "Id", "Nome");
             return View();
         }
 

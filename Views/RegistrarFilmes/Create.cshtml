@@ -4,6 +4,58 @@
     ViewData["Title"] = "Create";
 }
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+<script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var multipleCancelButton = new Choices('#choicesButton', {
+            removeItemButton: true,
+            placeholderValue: "Selecione os gêneros",
+            noResultsText: "Sem resultados encontrados",
+            noChoicesText: "Nenhuma opção disponível",
+            itemSelectText: "Pressione para selecionar"
+        });
+    });
+
+    function createInput(nome, id){
+        let divRow = document.createElement("div");
+        divRow.setAttribute("class", "row");
+        divRow.setAttribute("style", "margin-top: 5px");
+        divRow.setAttribute("id", id);
+
+        let divName = document.createElement("div");
+        divName.setAttribute("class", "col-md-5 align-content-center");
+        divName.innerHTML = nome;
+
+        let divInput = document.createElement("div");
+        divInput.setAttribute("class", "col-md-7");
+
+        let input = document.createElement("input");
+        input.setAttribute("class", "form-control");
+        input.setAttribute("placeholder", "Nome do personagem");
+        input.setAttribute("name", "CadastroPersonagem");
+
+        divInput.appendChild(input);
+
+        divRow.appendChild(divName);
+        divRow.appendChild(divInput);
+
+        document.getElementsByClassName("personagens")[0].appendChild(divRow);
+    }
+    function removeInput(id) { document.getElementById(id).remove();}
+</script>   
+
+<style>
+    *{
+       // border:1px solid black;
+    }
+</style>
+
 <h1>Create</h1>
 
 <h4>RegistrarFilme</h4>
@@ -32,6 +84,20 @@
                 <input asp-for="LinkCapa" class="form-control" />
                 <span asp-validation-for="LinkCapa" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label class="control-label">Generos</label>
+                <select id="choicesButton" class="form-control" asp-items="ViewBag.DadosGeneros" name="CadastroGeneros" id="CadastroGeneros" multiple></select>
+            </div>
+
+            <div class="personagens" >
+
+				<!--<div class="row" style="margin-top: 5px" id="1">
+                <div class="col-md-5 align-content-center">Dwayne Johnson</div>
+                    <div class="col-md-7"><input class="form-control" placeholder="Nome do personagem" name="CadastroPersonagem"/></div>
+                </div>-->
+
+            </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

@@ -72,7 +72,7 @@
               "RelativeDocumentMoniker": "Views\\RegistrarFilmes\\Create.cshtml",
               "ToolTip": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Views\\RegistrarFilmes\\Create.cshtml",
               "RelativeToolTip": "Views\\RegistrarFilmes\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGsAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-15T23:27:13.909Z",
               "EditorCaption": ""
@@ -111,8 +111,7 @@
               "RelativeToolTip": "Controllers\\RegistrarFilmesController.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAYwDEAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T23:09:10.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T23:09:10.596Z"
             },
             {
               "$type": "Document",
@@ -136,8 +135,7 @@
               "RelativeToolTip": "Models\\CadastroAtor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T03:27:33.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T03:27:33.224Z"
             },
             {
               "$type": "Document",
@@ -149,8 +147,7 @@
               "RelativeToolTip": "Models\\CadastroGenero.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T03:28:08.187Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T03:28:08.187Z"
             },
             {
               "$type": "Document",

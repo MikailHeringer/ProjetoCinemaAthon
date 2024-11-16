@@ -6,11 +6,14 @@
 
 <style>
     *{
-        border: 1px solid black;
+        // border: 1px solid black;
     }
 </style>
 
 <h1>Detalhes</h1>
+
+<hr />
+
 <div class="card mb-3" style="max-width: 1300px;">
     <div class="row g-0">
         <div class="col-md-3">
@@ -45,16 +48,20 @@
                     <dd class="col-sm-6">
                         @string.Join(", ", Model.VinculoFilmeGenero.Select(g => g.CadastroGenero.Nome))
                     </dd>
-
+                    <hr />
                     <div class="col-md-4 align-content-center" style="font-weight:bold">Nome do Ator</div>
                     <div class="col-md-6 align-content-center" style="font-weight:bold">Personagem</div>
                     <div class="personagens">
-
-                        <div class="row" style="margin-top: 5px" id="2">
-                            <div class="col-md-4 align-content-center">Chris Evans</div>
-                            <div class="col-md-6"> Personagem</div>
-                            <div class="col-md-2 text-center"> Exibir Detalhes</div>
-                        </div>
+                        @foreach (var vinculo in Model.VinculoAtorPersonagem)
+                        {
+                            <div class="row" style="margin-top: 5px" id="2">
+                                <div class="col-md-4 align-content-center">@vinculo.CadastroAtor.Nome</div>
+                                <div class="col-md-5">@vinculo.NomePersonagem</div>
+                                <div class="col-md-3 text-center">
+                                    <a asp-controller="CadastroAtores" asp-action="Details" asp-route-id="@vinculo.CadastroAtor.Id" class="btn btn-outline-primary">Exibir Detalhes</a>
+                                </div>
+                            </div>
+                        }
 
                     </div>
                 </dl>
@@ -62,7 +69,8 @@
         </div>
     </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div class="btn-group" role="group">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-primary">Voltar</a>
 </div>

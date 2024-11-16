@@ -34,6 +34,8 @@ namespace ProjetoCinemaAthon.Controllers
             }
 
             var registrarFilme = await _context.RegistrarFilme
+                .Include(p => p.VinculoAtorPersonagem)
+                .ThenInclude(g => g.CadastroAtor)
                 .Include(f => f.VinculoFilmeGenero)
                 .ThenInclude(g => g.CadastroGenero)
                 .FirstOrDefaultAsync(m => m.Id == id);
@@ -110,7 +112,12 @@ namespace ProjetoCinemaAthon.Controllers
                 return NotFound();
             }
 
-            var registrarFilme = await _context.RegistrarFilme.FindAsync(id);
+            var registrarFilme = await _context.RegistrarFilme
+                .Include(p => p.VinculoAtorPersonagem)
+                .ThenInclude(g => g.CadastroAtor)
+                .Include(f => f.VinculoFilmeGenero)
+                .ThenInclude(g => g.CadastroGenero)
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (registrarFilme == null)
             {
                 return NotFound();

@@ -22,5 +22,6 @@ namespace ProjetoCinemaAthon.Models
 
         public ICollection<VinculoFilmeGenero>? VinculoFilmeGenero { get; set; }
         public ICollection<VinculoFilmeAtor>? VinculoFilmeAtor { get; set; }
+        public ICollection<VinculoAtorPersonagem>? VinculoAtorPersonagem { get; set; }
     }
 }

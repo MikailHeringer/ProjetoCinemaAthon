@@ -293,6 +293,33 @@ namespace ProjetoCinemaAthon.Data.Migrations
                     b.ToTable("RegistrarFilme");
                 });
 
+            modelBuilder.Entity("ProjetoCinemaAthon.Models.VinculoAtorPersonagem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CadastroAtorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NomePersonagem")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RegistrarFilmeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CadastroAtorId");
+
+                    b.HasIndex("RegistrarFilmeId");
+
+                    b.ToTable("VinculoAtorPersonagem");
+                });
+
             modelBuilder.Entity("ProjetoCinemaAthon.Models.VinculoFilmeAtor", b =>
                 {
                     b.Property<int>("Id")
@@ -388,6 +415,25 @@ namespace ProjetoCinemaAthon.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ProjetoCinemaAthon.Models.VinculoAtorPersonagem", b =>
+                {
+                    b.HasOne("ProjetoCinemaAthon.Models.CadastroAtor", "CadastroAtor")
+                        .WithMany()
+                        .HasForeignKey("CadastroAtorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjetoCinemaAthon.Models.RegistrarFilme", "RegistrarFilme")
+                        .WithMany()
+                        .HasForeignKey("RegistrarFilmeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CadastroAtor");
+
+                    b.Navigation("RegistrarFilme");
                 });
 
             modelBuilder.Entity("ProjetoCinemaAthon.Models.VinculoFilmeAtor", b =>

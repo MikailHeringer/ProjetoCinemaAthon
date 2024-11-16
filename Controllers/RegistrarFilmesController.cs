@@ -34,6 +34,8 @@ namespace ProjetoCinemaAthon.Controllers
             }
 
             var registrarFilme = await _context.RegistrarFilme
+                .Include(f => f.VinculoFilmeGenero)
+                .ThenInclude(g => g.CadastroGenero)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (registrarFilme == null)
             {
@@ -71,7 +73,7 @@ namespace ProjetoCinemaAthon.Controllers
                     _context.Add(vinculoFilmeGenero);
                 }
 
-                for(int i=0; i < cadastroAtor.Length; i++)
+                for (int i=0; i < cadastroAtor.Length; i++)
                 {
                     VinculoFilmeAtor vinculoFilmeAtor = new();
                     vinculoFilmeAtor.RegistrarFilmeId = registrarFilme.Id;
@@ -89,18 +91,15 @@ namespace ProjetoCinemaAthon.Controllers
                     {
                         vinculoAtorPersonagem.NomePersonagem = CadastroPersonagem[i];
                     }
-                    
                     _context.Add(vinculoAtorPersonagem);
                 }
-
-                return RedirectToAction(nameof(Index));
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
 
 
-            return View(registrarFilme);
+            /*return View(registrarFilme);*/
         }
 
         // GET: RegistrarFilmes/Edit/5

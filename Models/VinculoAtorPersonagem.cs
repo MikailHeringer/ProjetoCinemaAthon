@@ -3,7 +3,7 @@
     public class VinculoAtorPersonagem
     {
         public int Id { get; set; }
-        public int NomePersonagem { get; set; }
+        public string NomePersonagem { get; set; }
         public int RegistrarFilmeId { get; set; }
         public int CadastroAtorId { get; set; }
 

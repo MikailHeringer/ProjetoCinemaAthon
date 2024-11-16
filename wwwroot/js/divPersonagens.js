@@ -1,14 +1,4 @@
-﻿$(document).ready(function () {
-    var multipleCancelButton = new Choices('#choicesButton', {
-        removeItemButton: true,
-        placeholderValue: "Selecione os gêneros",
-        noResultsText: "Sem resultados encontrados",
-        noChoicesText: "Nenhuma opção disponível",
-        itemSelectText: "Pressione para selecionar"
-    });
-});
-
-var choicesButton = document.getElementById("choicesButton");
+﻿var choicesButton = document.getElementById("choicesButton");
 
 choicesButton.addEventListener('addItem', (event) => {
     createInput(event.detail.label, event.detail.value);

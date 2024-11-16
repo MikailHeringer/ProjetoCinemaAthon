@@ -8,17 +8,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
 <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
-<script src="~/js/divPersonagens.js"></script>  
+<script src="~/js/divPersonagens.js"></script>
 
-<style>
-    *{
-       //border:1px solid black;
-    }
-</style>
+<h4>Cadastrar novo filme</h4>
 
-<h1>Create</h1>
-
-<h4>RegistrarFilme</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -36,17 +29,22 @@
             </div>
             <div class="form-group">
                 <label asp-for="Diretor" class="control-label"></label>
-                <input asp-for="Diretor" class="form-control" />
+                <input asp-for="Diretor" class="form-control"/>
                 <span asp-validation-for="Diretor" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LinkCapa" class="control-label"></label>
-                <input asp-for="LinkCapa" class="form-control" />
+                <input asp-for="LinkCapa" class="form-control"/>
                 <span asp-validation-for="LinkCapa" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Generos</label>
-                <select id="choicesButton" class="form-control" asp-items="ViewBag.DadosGeneros" name="CadastroGeneros" id="CadastroGeneros" multiple></select>
+                <select class="form-control choicesMultiple" asp-items="ViewBag.DadosGeneros" name="cadastroGeneros" multiple></select>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Atores</label>
+                <select class="form-control choicesMultiple" asp-items="ViewBag.DadosAtor" name="cadastroAtor" id="choicesButton" multiple></select>
             </div>
 
             <div class="row" style="margin-top:10px; margin-bottom:10px; display:none;" id="rowPersons">
@@ -54,13 +52,8 @@
                 <div class="col-md-5 align-content-center" style="font-weight:bold">Nome do Ator</div>
                 <div class="col-md-7 align-content-center" style="font-weight:bold">Personagem</div>
 
-                <div class="personagens">
+                <div class="personagens"></div>
 
-				    <!--<div class="row" style="margin-top: 5px" id="1">
-                    <div class="col-md-5 align-content-center">Dwayne Johnson</div>
-                        <div class="col-md-7"><input class="form-control" placeholder="Nome do personagem" name="CadastroPersonagem"/></div>
-                    </div>-->
-                </div>
             </div>
             
 

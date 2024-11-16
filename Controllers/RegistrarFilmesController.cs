@@ -56,14 +56,50 @@ namespace ProjetoCinemaAthon.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Titulo,DtLancamento,Diretor,LinkCapa")] RegistrarFilme registrarFilme)
+        public async Task<IActionResult> Create(RegistrarFilme registrarFilme, int[] cadastroGeneros, int[] cadastroAtor, string[] CadastroPersonagem)
         {
-            if (ModelState.IsValid)
+           if (ModelState.IsValid)
             {
                 _context.Add(registrarFilme);
                 await _context.SaveChangesAsync();
+
+                for(int i=0; i < cadastroGeneros.Length; i++)
+                {
+                    VinculoFilmeGenero vinculoFilmeGenero = new();
+                    vinculoFilmeGenero.RegistrarFilmeId = registrarFilme.Id;
+                    vinculoFilmeGenero.CadastroGeneroId = cadastroGeneros[i];
+                    _context.Add(vinculoFilmeGenero);
+                }
+
+                for(int i=0; i < cadastroAtor.Length; i++)
+                {
+                    VinculoFilmeAtor vinculoFilmeAtor = new();
+                    vinculoFilmeAtor.RegistrarFilmeId = registrarFilme.Id;
+                    vinculoFilmeAtor.CadastroAtorId = cadastroAtor[i];
+                    _context.Add(vinculoFilmeAtor);
+
+                    VinculoAtorPersonagem vinculoAtorPersonagem = new();
+                    vinculoAtorPersonagem.RegistrarFilmeId = registrarFilme.Id;
+                    vinculoAtorPersonagem.CadastroAtorId = cadastroAtor[i];
+                    if(CadastroPersonagem[i] == null)
+                    {
+                        vinculoAtorPersonagem.NomePersonagem = "Não cadastrado";
+                    }
+                    else
+                    {
+                        vinculoAtorPersonagem.NomePersonagem = CadastroPersonagem[i];
+                    }
+                    
+                    _context.Add(vinculoAtorPersonagem);
+                }
+
                 return RedirectToAction(nameof(Index));
             }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+
             return View(registrarFilme);
         }
 

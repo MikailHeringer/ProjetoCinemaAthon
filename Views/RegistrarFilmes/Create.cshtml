@@ -1,0 +1,73 @@
+﻿@model ProjetoCinemaAthon.Models.RegistrarFilme
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+<script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+<script src="~/js/divPersonagens.js"></script>
+
+<h4>Cadastrar novo filme</h4>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DtLancamento" class="control-label"></label>
+                <input asp-for="DtLancamento" class="form-control" />
+                <span asp-validation-for="DtLancamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Diretor" class="control-label"></label>
+                <input asp-for="Diretor" class="form-control"/>
+                <span asp-validation-for="Diretor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinkCapa" class="control-label"></label>
+                <input asp-for="LinkCapa" class="form-control"/>
+                <span asp-validation-for="LinkCapa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Generos</label>
+                <select class="form-control choicesMultiple" asp-items="ViewBag.DadosGeneros" name="cadastroGeneros" multiple></select>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Atores</label>
+                <select class="form-control choicesMultiple" asp-items="ViewBag.DadosAtor" name="cadastroAtor" id="choicesButton" multiple></select>
+            </div>
+
+            <div class="row" style="margin-top:10px; margin-bottom:10px; display:none;" id="rowPersons">
+                   
+                <div class="col-md-5 align-content-center" style="font-weight:bold">Nome do Ator</div>
+                <div class="col-md-7 align-content-center" style="font-weight:bold">Personagem</div>
+
+                <div class="personagens"></div>
+
+            </div>
+            
+
+            <div class="form-group" style="margin-top:10px;">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

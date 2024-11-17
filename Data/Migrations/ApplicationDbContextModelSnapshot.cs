@@ -247,7 +247,7 @@ namespace ProjetoCinemaAthon.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CadastroAtor");
+                    b.ToTable("CadastroAtor", (string)null);
                 });
 
             modelBuilder.Entity("ProjetoCinemaAthon.Models.CadastroGenero", b =>
@@ -264,7 +264,7 @@ namespace ProjetoCinemaAthon.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CadastroGenero");
+                    b.ToTable("CadastroGenero", (string)null);
                 });
 
             modelBuilder.Entity("ProjetoCinemaAthon.Models.Contato", b =>
@@ -295,7 +295,7 @@ namespace ProjetoCinemaAthon.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Contato");
+                    b.ToTable("Contato", (string)null);
                 });
 
             modelBuilder.Entity("ProjetoCinemaAthon.Models.RegistrarFilme", b =>
@@ -321,7 +321,7 @@ namespace ProjetoCinemaAthon.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RegistrarFilme");
+                    b.ToTable("RegistrarFilme", (string)null);
                 });
 
             modelBuilder.Entity("ProjetoCinemaAthon.Models.VinculoAtorPersonagem", b =>
@@ -348,7 +348,7 @@ namespace ProjetoCinemaAthon.Data.Migrations
 
                     b.HasIndex("RegistrarFilmeId");
 
-                    b.ToTable("VinculoAtorPersonagem");
+                    b.ToTable("VinculoAtorPersonagem", (string)null);
                 });
 
             modelBuilder.Entity("ProjetoCinemaAthon.Models.VinculoFilmeAtor", b =>
@@ -371,7 +371,7 @@ namespace ProjetoCinemaAthon.Data.Migrations
 
                     b.HasIndex("RegistrarFilmeId");
 
-                    b.ToTable("VinculoFilmeAtor");
+                    b.ToTable("VinculoFilmeAtor", (string)null);
                 });
 
             modelBuilder.Entity("ProjetoCinemaAthon.Models.VinculoFilmeGenero", b =>
@@ -394,7 +394,7 @@ namespace ProjetoCinemaAthon.Data.Migrations
 
                     b.HasIndex("RegistrarFilmeId");
 
-                    b.ToTable("VinculoFilmeGenero");
+                    b.ToTable("VinculoFilmeGenero", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

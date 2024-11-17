@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K9Ndnu7cL8AfNErKh70AayU0R1aY6Ansm3AVoywGTmA=",
+  "Hash": "0a78Zxz+XwWyKOS2POCU8ety3T6RGdEPdr96fokLjJ0=",
   "Source": "ProjetoCinemaAthon",
   "BasePath": "_content/ProjetoCinemaAthon",
   "Mode": "Default",
@@ -1250,6 +1250,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\divPersonagens.js"
+    },
+    {
+      "Identity": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\divPersonagensEdit.js",
+      "SourceId": "ProjetoCinemaAthon",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\",
+      "BasePath": "_content/ProjetoCinemaAthon",
+      "RelativePath": "js/divPersonagensEdit.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\divPersonagensEdit.js"
     },
     {
       "Identity": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\site.js",

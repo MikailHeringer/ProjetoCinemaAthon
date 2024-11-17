@@ -122,6 +122,10 @@ namespace ProjetoCinemaAthon.Controllers
             {
                 return NotFound();
             }
+
+            ViewData["DadosGeneros"] = new SelectList(_context.CadastroGenero, "Id", "Nome", registrarFilme?.VinculoFilmeGenero?.Select(v => v.CadastroGeneroId));
+            ViewData["DadosAtor"] = new SelectList(_context.CadastroAtor, "Id", "Nome", registrarFilme?.VinculoAtorPersonagem?.Select(v => v.CadastroAtorId));
+
             return View(registrarFilme);
         }
 
@@ -130,7 +134,7 @@ namespace ProjetoCinemaAthon.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Titulo,DtLancamento,Diretor,LinkCapa")] RegistrarFilme registrarFilme)
+        public async Task<IActionResult> Edit(int id, RegistrarFilme registrarFilme)
         {
             if (id != registrarFilme.Id)
             {
@@ -157,6 +161,7 @@ namespace ProjetoCinemaAthon.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             return View(registrarFilme);
         }
 

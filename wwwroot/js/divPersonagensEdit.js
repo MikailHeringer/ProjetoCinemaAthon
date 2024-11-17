@@ -1,15 +1,8 @@
-﻿let choicesButton = document.getElementById("choicesButton");
-choicesButton.addEventListener('addItem', (event) => {
-    createInput(event.detail.label, event.detail.value);
-});
-
-choicesButton.addEventListener('removeItem', (event) => {
-    removeInput(event.detail.value);
-});
-
-function createInput(nome, id, inputValue="") {
+﻿let dados = [], addDados = [];
+function createInput(nome, id, dadosInternos) {
     document.getElementById("rowPersons").style.display = "flex";
     let divRow = document.createElement("div");
+    let personInput ="";
     divRow.setAttribute("class", "row");
     divRow.setAttribute("style", "margin-top: 5px");
     divRow.setAttribute("id", id);
@@ -21,8 +14,17 @@ function createInput(nome, id, inputValue="") {
     let divInput = document.createElement("div");
     divInput.setAttribute("class", "col-md-7");
 
+    dadosInternos.forEach(function (person) {
+        let nomeLimpo = nome.replace(/\s+/g, '')
+        let buscaLimpa = person.nome.replace(/\s+/g, '');
+        if (buscaLimpa == nomeLimpo) {
+            personInput = person.person;
+        }
+    });
+
     let input = document.createElement("input");
-    input.value = inputValue;
+    input.value = personInput;
+    input.id = "value" + id;
     input.setAttribute("class", "form-control");
     input.setAttribute("placeholder", "Nome do personagem");
     input.setAttribute("name", "CadastroPersonagem");

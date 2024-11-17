@@ -20,5 +20,6 @@ namespace ProjetoCinemaAthon.Models
         public string? FotoArtista { get; set; }
 
         public ICollection<VinculoFilmeAtor>? VinculoFilmeAtor { get; set; }
+        public ICollection<VinculoAtorPersonagem>? VinculoAtorPersonagem { get; set; }
     }
 }

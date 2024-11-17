@@ -38,7 +38,6 @@ function createInput(nome, id, dadosInternos) {
 }
 function removeInput(id) {
     let pers = document.getElementsByClassName("personagens")[0].children.length;
-    console.log(pers);
     if (pers <= 1) {
         document.getElementById("rowPersons").style.display = "none";
     }

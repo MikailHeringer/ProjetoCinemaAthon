@@ -20,3 +20,36 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.displayStyle {
+    top: 1px;
+    left: 1px;
+    display: block;
+    position: absolute;
+    padding: 5px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: rgba(0,0,0,.5);
+    background-color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(0,0,0,.225);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.displayStyleOut {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.divName {
+    margin: 10px;
+    text-align-last: center;
+    font-size:large;
+    font-weight:bold;
+    color:black;
+    cursor:pointer;
+    
+}

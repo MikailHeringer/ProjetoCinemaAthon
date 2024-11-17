@@ -34,6 +34,9 @@ namespace ProjetoCinemaAthon.Controllers
             }
 
             var cadastroAtor = await _context.CadastroAtor
+                .Include(p => p.VinculoFilmeAtor)
+                .ThenInclude(g => g.RegistrarFilme)
+                .Include(f => f.VinculoAtorPersonagem)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (cadastroAtor == null)
             {

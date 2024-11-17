@@ -11,8 +11,8 @@
       "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|e:\\onedrive\\athon\\4ads\\asp net\\projetocinemaathon\\views\\registrarfilmes\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:views\\registrarfilmes\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|e:\\onedrive\\athon\\4ads\\asp net\\projetocinemaathon\\controllers\\contatoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:controllers\\contatoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,9 +32,9 @@
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACQAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAC8AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-17T16:07:09.108Z",
+              "WhenOpened": "2024-11-17T17:32:51.235Z",
               "EditorCaption": ""
             },
             {
@@ -45,22 +45,22 @@
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T16:06:07.279Z",
+              "WhenOpened": "2024-11-17T17:31:29.337Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Views\\RegistrarFilmes\\Delete.cshtml",
-              "RelativeDocumentMoniker": "Views\\RegistrarFilmes\\Delete.cshtml",
-              "ToolTip": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Views\\RegistrarFilmes\\Delete.cshtml",
-              "RelativeToolTip": "Views\\RegistrarFilmes\\Delete.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-17T16:03:04.86Z",
+              "Title": "ContatosController.cs",
+              "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Controllers\\ContatosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ContatosController.cs",
+              "ToolTip": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Controllers\\ContatosController.cs",
+              "RelativeToolTip": "Controllers\\ContatosController.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAA5wEQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T17:09:33.6Z",
               "EditorCaption": ""
             }
           ]

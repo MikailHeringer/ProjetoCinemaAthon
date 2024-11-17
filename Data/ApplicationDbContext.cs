@@ -16,5 +16,6 @@ namespace ProjetoCinemaAthon.Data
         public DbSet<ProjetoCinemaAthon.Models.VinculoAtorPersonagem> VinculoAtorPersonagem { get; set; } = default!;
         public DbSet<ProjetoCinemaAthon.Models.VinculoFilmeGenero> VinculoFilmeGenero { get; set; } = default!;
         public DbSet<ProjetoCinemaAthon.Models.Contato> Contato { get; set; } = default!;
+        public DbSet<ProjetoCinemaAthon.Models.Busca> Busca { get; set; } = default!;
     }
 }

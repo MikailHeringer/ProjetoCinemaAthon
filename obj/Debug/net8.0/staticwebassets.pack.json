@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\js\\divPersonagens.js"
     },
     {
+      "Id": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\divPersonagensEdit.js",
+      "PackagePath": "staticwebassets\\js\\divPersonagensEdit.js"
+    },
+    {
       "Id": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

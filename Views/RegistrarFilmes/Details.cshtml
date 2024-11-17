@@ -4,39 +4,72 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<style>
+    *{
+        // border: 1px solid black;
+    }
+</style>
 
-<div>
-    <h4>RegistrarFilme</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Titulo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Titulo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DtLancamento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DtLancamento)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Diretor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Diretor)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LinkCapa)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LinkCapa)
-        </dd>
-    </dl>
+<h1>Detalhes</h1>
+
+<hr />
+
+<div class="card mb-3" style="max-width: 1300px; border:none;">
+    <div class="row g-0">
+        <div class="col-md-3">
+            <img src="@Model.LinkCapa" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body ">
+
+                <dl class="row">
+
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Titulo)
+                    </dt>
+                    <dd class="col-sm-6">
+                        @Html.DisplayFor(model => model.Titulo)
+                    </dd>
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.DtLancamento)
+                    </dt>
+                    <dd class="col-sm-6">
+                        @Html.DisplayFor(model => model.DtLancamento)
+                    </dd>
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Diretor)
+                    </dt>
+                    <dd class="col-sm-6">
+                        @Html.DisplayFor(model => model.Diretor)
+                    </dd>
+                    <dt class="col-sm-4">
+                        Generos
+                    </dt>
+                    <dd class="col-sm-6">
+                        @string.Join(", ", Model.VinculoFilmeGenero.Select(g => g.CadastroGenero.Nome))
+                    </dd>
+                    <hr />
+                    <div class="col-md-4 align-content-center" style="font-weight:bold">Nome do Ator</div>
+                    <div class="col-md-6 align-content-center" style="font-weight:bold">Personagem</div>
+                    <div class="personagens">
+                        @foreach (var vinculo in Model.VinculoAtorPersonagem)
+                        {
+                            <div class="row" style="margin-top: 5px" id="2">
+                                <div class="col-md-4 align-content-center">@vinculo.CadastroAtor.Nome</div>
+                                <div class="col-md-5">@vinculo.NomePersonagem</div>
+                                <div class="col-md-3 text-center">
+                                    <a asp-controller="CadastroAtores" asp-action="Details" asp-route-id="@vinculo.CadastroAtor.Id" class="btn btn-outline-primary">Exibir Detalhes</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div class="btn-group" role="group">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-primary">Voltar</a>
 </div>

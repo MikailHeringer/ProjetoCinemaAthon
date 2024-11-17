@@ -3,13 +3,24 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<meta charset="UTF-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+<script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+<script src="~/js/divPersonagensEdit.js"></script>
+
+<style>
+    *{
+        //border: 1px solid black;
+    }
+</style>
 
 <h1>Edit</h1>
 
 <h4>RegistrarFilme</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
@@ -34,16 +45,90 @@
                 <span asp-validation-for="LinkCapa" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <label for="Generos">Gêneros</label>
+                <select class="form-control choicesMultipleGenero" asp-for="VinculoFilmeGenero" class="form-control" multiple name="cadastroGeneros">
+                    @foreach (var genero in ViewBag.DadosGeneros)
+                    {
+                        var isSelected = (Model.VinculoFilmeGenero?.Any(v => v.CadastroGeneroId == int.Parse(genero.Value)) == true ? true : false);
+
+                        <option value="@genero.Value" selected="@isSelected">
+                            @genero.Text
+                        </option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Generos">Atores</label>
+                <select class="form-control choicesMultipleAtor" asp-for="VinculoFilmeGenero" class="form-control" multiple id="choicesButton" name="cadastroAtor">
+                @foreach (var ator in ViewBag.DadosAtor)
+                {
+                    // Mantem o padrão UTF-8 do personagem
+                    var personagem = @Html.Raw(Json.Serialize((
+                    Model.VinculoAtorPersonagem?.FirstOrDefault(v => v.CadastroAtorId == int.Parse(ator.Value))?.NomePersonagem ?? "")
+                    )); 
+
+                    // Verifica de o ator esta vinculado ao filme
+                    var isSelected = (Model.VinculoAtorPersonagem?.Any(v => v.CadastroAtorId == int.Parse(ator.Value)) == true ? true : false);
+                        
+                    // cria um array para insersão de dados no input dos personagens
+                        <script> 
+                            addDados = {
+                                nome: "@ator.Text",
+                                id: @ator.Value,
+                                person: @personagem
+                            };
+                            dados.push(addDados);
+                        </script>
+                    
+                    // adiciona o ator ao menu de selecão e marca os que estão vinculados ao filme
+                    <option value="@ator.Value" selected="@isSelected">
+                        @ator.Text
+                    </option>
+                    
+                }
+                </select>
+            </div>
+
+
+            <div class="row" style="margin-top:10px; margin-bottom:10px; display:flex;" id="rowPersons">
+
+                <div class="col-md-5 align-content-center" style="font-weight:bold">Nome do Ator</div>
+                <div class="col-md-7 align-content-center" style="font-weight:bold">Personagem</div>
+
+                <div class="personagens"></div>
+
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    let choicesButton = document.getElementById("choicesButton");
+
+                    choicesButton.addEventListener('addItem', (event) => {
+                        createInput(event.detail.label, event.detail.value, dados);
+                    });
+
+                    choicesButton.addEventListener('removeItem', (event) => {
+                        removeInput(event.detail.value);
+                    });
+                });   
+            </script>
+
+            <div class="form-group">
+                <input type="submit" value="Atualizar" class="btn btn-primary" style="margin-top:5px" />
             </div>
         </form>
     </div>
 </div>
 
+
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-primary" style="margin-top:5px">Voltar</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+
+<script>
+</script>

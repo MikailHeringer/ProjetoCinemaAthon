@@ -5,7 +5,7 @@
 namespace ProjetoCinemaAthon.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class NomePersonagemIntToString : Migration
+    public partial class VinculoAtorPersonagem : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

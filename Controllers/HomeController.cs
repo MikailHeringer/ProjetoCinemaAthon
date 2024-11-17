@@ -19,6 +19,18 @@ namespace ProjetoCinemaAthon.Controllers
 
         public IActionResult Index()
         {
+            if (TempData["ResId"] != null)
+            {
+                int resId = (int)TempData["ResId"];
+                if (resId == 1)
+                {
+                    ViewBag.Message = "true";
+                }
+                else if (resId == 2)
+                {
+                    ViewBag.Message = "false";
+                }
+            }
             return View(_context.RegistrarFilme);
         }
 

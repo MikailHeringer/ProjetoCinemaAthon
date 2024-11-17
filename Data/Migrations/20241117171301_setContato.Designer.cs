@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoCinemaAthon.Data;
 
@@ -11,9 +12,11 @@ using ProjetoCinemaAthon.Data;
 namespace ProjetoCinemaAthon.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241117171301_setContato")]
+    partial class setContato
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -247,7 +250,7 @@ namespace ProjetoCinemaAthon.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CadastroAtor", (string)null);
+                    b.ToTable("CadastroAtor");
                 });
 
             modelBuilder.Entity("ProjetoCinemaAthon.Models.CadastroGenero", b =>
@@ -264,7 +267,7 @@ namespace ProjetoCinemaAthon.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CadastroGenero", (string)null);
+                    b.ToTable("CadastroGenero");
                 });
 
             modelBuilder.Entity("ProjetoCinemaAthon.Models.Contato", b =>
@@ -295,7 +298,7 @@ namespace ProjetoCinemaAthon.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Contato", (string)null);
+                    b.ToTable("Contato");
                 });
 
             modelBuilder.Entity("ProjetoCinemaAthon.Models.RegistrarFilme", b =>
@@ -321,7 +324,7 @@ namespace ProjetoCinemaAthon.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RegistrarFilme", (string)null);
+                    b.ToTable("RegistrarFilme");
                 });
 
             modelBuilder.Entity("ProjetoCinemaAthon.Models.VinculoAtorPersonagem", b =>
@@ -348,7 +351,7 @@ namespace ProjetoCinemaAthon.Data.Migrations
 
                     b.HasIndex("RegistrarFilmeId");
 
-                    b.ToTable("VinculoAtorPersonagem", (string)null);
+                    b.ToTable("VinculoAtorPersonagem");
                 });
 
             modelBuilder.Entity("ProjetoCinemaAthon.Models.VinculoFilmeAtor", b =>
@@ -371,7 +374,7 @@ namespace ProjetoCinemaAthon.Data.Migrations
 
                     b.HasIndex("RegistrarFilmeId");
 
-                    b.ToTable("VinculoFilmeAtor", (string)null);
+                    b.ToTable("VinculoFilmeAtor");
                 });
 
             modelBuilder.Entity("ProjetoCinemaAthon.Models.VinculoFilmeGenero", b =>
@@ -394,7 +397,7 @@ namespace ProjetoCinemaAthon.Data.Migrations
 
                     b.HasIndex("RegistrarFilmeId");
 
-                    b.ToTable("VinculoFilmeGenero", (string)null);
+                    b.ToTable("VinculoFilmeGenero");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

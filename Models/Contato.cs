@@ -6,19 +6,18 @@ namespace ProjetoCinemaAthon.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O nome é obrigatório")]
         [Display(Name = "Nome Completo")]
         public string? Nome { get; set; }
 
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "O email é obrigatório")]
+        [EmailAddress(ErrorMessage = "Por favor, insira um e-mail válido")]
         [Display(Name = "E-mail para Contato")]
         public string? Email { get; set; }
 
         [Display(Name = "Assunto")]
         public string? Assunto { get; set; }
 
-        [Required]
         [Display(Name = "Mensagem")]
         public string? Mensagem { get; set; }
 

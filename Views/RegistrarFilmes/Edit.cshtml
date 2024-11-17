@@ -46,7 +46,7 @@
             </div>
             <div class="form-group">
                 <label for="Generos">Gêneros</label>
-                <select class="form-control choicesMultiple" asp-for="VinculoFilmeGenero" class="form-control" multiple name="cadastroGeneros">
+                <select class="form-control choicesMultipleGenero" asp-for="VinculoFilmeGenero" class="form-control" multiple name="cadastroGeneros">
                     @foreach (var genero in ViewBag.DadosGeneros)
                     {
                         var isSelected = (Model.VinculoFilmeGenero?.Any(v => v.CadastroGeneroId == int.Parse(genero.Value)) == true ? true : false);
@@ -58,7 +58,8 @@
                 </select>
             </div>
             <div class="form-group">
-                <select class="form-control choicesMultiple" asp-for="VinculoFilmeGenero" class="form-control" multiple id="choicesButton" name="cadastroAtor">
+                <label for="Generos">Atores</label>
+                <select class="form-control choicesMultipleAtor" asp-for="VinculoFilmeGenero" class="form-control" multiple id="choicesButton" name="cadastroAtor">
                 @foreach (var ator in ViewBag.DadosAtor)
                 {
                     // Mantem o padrão UTF-8 do personagem

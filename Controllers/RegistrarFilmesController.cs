@@ -134,7 +134,7 @@ namespace ProjetoCinemaAthon.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, RegistrarFilme registrarFilme)
+        public async Task<IActionResult> Edit(int id, RegistrarFilme registrarFilme, int[] cadastroGeneros, int[] cadastroAtor, string[] cadastroPersonagem)
         {
             if (id != registrarFilme.Id)
             {
@@ -147,6 +147,48 @@ namespace ProjetoCinemaAthon.Controllers
                 {
                     _context.Update(registrarFilme);
                     await _context.SaveChangesAsync();
+
+                    var vinculosGeneros = _context.VinculoFilmeGenero.Where(v => v.RegistrarFilmeId == registrarFilme.Id).ToList();
+                    foreach (var vinculo in vinculosGeneros)
+                    {
+                        _context.VinculoFilmeGenero.Remove(vinculo);
+                    }
+
+                    var vinculosAtores = _context.VinculoAtorPersonagem.Where(v => v.RegistrarFilmeId == registrarFilme.Id).ToList();
+                    foreach (var vinculo in vinculosAtores)
+                    {
+                        _context.VinculoAtorPersonagem.Remove(vinculo);
+                    }
+
+                    for (int i = 0; i < cadastroGeneros.Length; i++)
+                    {
+                        VinculoFilmeGenero vinculoFilmeGenero = new();
+                        vinculoFilmeGenero.RegistrarFilmeId = registrarFilme.Id;
+                        vinculoFilmeGenero.CadastroGeneroId = cadastroGeneros[i];
+                        _context.Add(vinculoFilmeGenero);
+                    }
+
+                    for (int i = 0; i < cadastroAtor.Length; i++)
+                    {
+                        VinculoFilmeAtor vinculoFilmeAtor = new();
+                        vinculoFilmeAtor.RegistrarFilmeId = registrarFilme.Id;
+                        vinculoFilmeAtor.CadastroAtorId = cadastroAtor[i];
+                        _context.Add(vinculoFilmeAtor);
+
+                        VinculoAtorPersonagem vinculoAtorPersonagem = new();
+                        vinculoAtorPersonagem.RegistrarFilmeId = registrarFilme.Id;
+                        vinculoAtorPersonagem.CadastroAtorId = cadastroAtor[i];
+                        if (cadastroPersonagem[i] == null)
+                        {
+                            vinculoAtorPersonagem.NomePersonagem = "Não cadastrado";
+                        }
+                        else
+                        {
+                            vinculoAtorPersonagem.NomePersonagem = cadastroPersonagem[i];
+                        }
+                        _context.Add(vinculoAtorPersonagem);
+                    }
+                        await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {

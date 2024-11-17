@@ -27,7 +27,7 @@ function createInput(nome, id, dadosInternos) {
     input.id = "value" + id;
     input.setAttribute("class", "form-control");
     input.setAttribute("placeholder", "Nome do personagem");
-    input.setAttribute("name", "CadastroPersonagem");
+    input.setAttribute("name", "cadastroPersonagem");
 
     divInput.appendChild(input);
 

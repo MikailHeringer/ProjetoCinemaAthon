@@ -11,7 +11,7 @@ namespace ProjetoCinemaAthon.Models
         public string? Nome { get; set; }
 
         [Required(ErrorMessage = "O email é obrigatório")]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Por favor, insira um e-mail válido")]
         [Display(Name = "E-mail para Contato")]
         public string? Email { get; set; }
 

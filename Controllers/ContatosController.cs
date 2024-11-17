@@ -22,11 +22,14 @@ namespace ProjetoCinemaAthon.Controllers
         // GET: Contatos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Contato.ToListAsync());
+            var contatos = await _context.Contato
+                .OrderByDescending(c => c.DataEnvio) // Ordenar pela DataEnvio em ordem decrescente
+                .ToListAsync();
+            return View(contatos);
         }
 
         // GET: Contatos/Details/5
-        public async Task<IActionResult> Details(int? id)
+        /*public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -41,7 +44,7 @@ namespace ProjetoCinemaAthon.Controllers
             }
 
             return View(contato);
-        }
+        }*/
 
         // GET: Contatos/Create
         public IActionResult Create()
@@ -70,7 +73,7 @@ namespace ProjetoCinemaAthon.Controllers
         }
 
         // GET: Contatos/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        /*public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -83,12 +86,12 @@ namespace ProjetoCinemaAthon.Controllers
                 return NotFound();
             }
             return View(contato);
-        }
+        }*/
 
         // POST: Contatos/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        /*[HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Email,Assunto,Mensagem,DataEnvio")] Contato contato)
         {
@@ -118,7 +121,7 @@ namespace ProjetoCinemaAthon.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(contato);
-        }
+        }*/
 
         // GET: Contatos/Delete/5
         public async Task<IActionResult> Delete(int? id)

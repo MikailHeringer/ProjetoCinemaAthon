@@ -38,8 +38,12 @@ function search(pesquisa) {
     if (pesquisa != texto) {
         document.getElementById("cards").innerHTML = "";
         texto = pesquisa;
-        console.log(indice);
+
+
         switch (indice) {
+
+            // Pesquisa por filme
+
             case "titulo":
                 itens.filme.forEach(item => {
                     if (pesquisa == item.titulo) {
@@ -47,53 +51,55 @@ function search(pesquisa) {
                     }
                 });
                 break;
-            default: break;
-        }
 
-
-
-    }
-}
-
-
-/*
-
-            case "artistas":
-                ats = [];
+            case "artistas":            
                 itens.filme.forEach(pgFilme => {
+                    let find = false;
                     pgFilme.artistas.forEach(item => {
-                        ats.push(item);
+                        if (pesquisa == item) {
+                            find = true;
+                        }
                     });
-                });
-                ats = [...new Set(ats)];
-                ats.forEach(item => {
-                    createSubs(subs, item);
+                    if (find) {
+                        createCards(pgFilme.titulo, pgFilme.linkCapa);
+                    }
                 });
                 break;
+
             case "generos":
-                ats = [];
                 itens.filme.forEach(pgFilme => {
+                    let find = false;
                     pgFilme.generos.forEach(item => {
-                        ats.push(item);
+                        if (pesquisa == item) {
+                            find = true;
+                        }
                     });
-                });
-                ats = [...new Set(ats)];
-                ats.forEach(item => {
-                    createSubs(subs, item);
+                    if (find) {
+                        createCards(pgFilme.titulo, pgFilme.linkCapa);
+                    }
                 });
                 break;
+
+            // Pesquisa por artista
+
             case "nome":
                 itens.artista.forEach(item => {
-                    createSubs(subs, item.nome);
+                    if (pesquisa == item.nome) {
+                        createCards(item.nome, item.fotoArtista);
+                    }
                 });
                 break;
+
             case "paisNascimento":
                 itens.artista.forEach(item => {
-                    ats.push(item.paisNascimento);
+                    if (pesquisa == item.paisNascimento) {
+                        if (find) {
+                            createCards(item.nome, item.fotoArtista);
+                        }
+                    }
                 });
-                ats = [...new Set(ats)];
-                ats.forEach(item => {
-                    createSubs(subs, item);
-                });
-
-*/
+                break;
+            default: break;
+        }
+    }
+}

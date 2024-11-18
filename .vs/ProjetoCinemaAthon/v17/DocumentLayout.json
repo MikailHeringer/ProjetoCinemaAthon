@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|e:\\onedrive\\athon\\4ads\\asp net\\projetocinemaathon\\wwwroot\\js\\buscar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:wwwroot\\js\\buscar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|e:\\onedrive\\athon\\4ads\\asp net\\projetocinemaathon\\wwwroot\\js\\configbuscar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{CE819F5E-7607-4D0D-B558-10BEF333E385}|ProjetoCinemaAthon.csproj|solutionrelative:wwwroot\\js\\configbuscar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
@@ -22,11 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ConfigBuscar.js",
               "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\ConfigBuscar.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\ConfigBuscar.js",
@@ -39,20 +35,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Buscar.js",
-              "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\Buscar.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\Buscar.js",
-              "ToolTip": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\Buscar.js",
-              "RelativeToolTip": "wwwroot\\js\\Buscar.js",
-              "ViewState": "AgIAABoAAAAAAAAAAAAUwCYAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-11-18T02:09:10.401Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\Views\\Pesquisas\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Pesquisas\\Index.cshtml",
@@ -60,8 +43,7 @@
               "RelativeToolTip": "Views\\Pesquisas\\Index.cshtml",
               "ViewState": "AgIAADMAAAAAAAAAAAAAAEgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-18T00:42:12.369Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T00:42:12.369Z"
             }
           ]
         }

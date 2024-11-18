@@ -42,7 +42,6 @@ function search(pesquisa) {
         switch (indice) {
             case "titulo":
                 itens.filme.forEach(item => {
-                    console.log(pesquisa + "==" + item.titulo);
                     if (pesquisa == item.titulo) {
                         createCards(item.titulo, item.linkCapa);
                     }

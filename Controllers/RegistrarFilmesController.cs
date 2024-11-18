@@ -147,6 +147,11 @@ namespace ProjetoCinemaAthon.Controllers
                 {
                     _context.Update(registrarFilme);
                     await _context.SaveChangesAsync();
+                    var vinculosAtor = _context.VinculoFilmeAtor.Where(v => v.RegistrarFilmeId == registrarFilme.Id).ToList();
+                    foreach (var vinculo in vinculosAtor)
+                    {
+                        _context.VinculoFilmeAtor.Remove(vinculo);
+                    }
 
                     var vinculosGeneros = _context.VinculoFilmeGenero.Where(v => v.RegistrarFilmeId == registrarFilme.Id).ToList();
                     foreach (var vinculo in vinculosGeneros)
@@ -188,6 +193,7 @@ namespace ProjetoCinemaAthon.Controllers
                         }
                         _context.Add(vinculoAtorPersonagem);
                     }
+
                         await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

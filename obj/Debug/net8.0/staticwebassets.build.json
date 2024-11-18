@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0a78Zxz+XwWyKOS2POCU8ety3T6RGdEPdr96fokLjJ0=",
+  "Hash": "JVOPMC1X3ZLEuhDd776Rw03lXSkNS/dJsS9vtXn/AM4=",
   "Source": "ProjetoCinemaAthon",
   "BasePath": "_content/ProjetoCinemaAthon",
   "Mode": "Default",
@@ -1269,6 +1269,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\divPersonagensEdit.js"
+    },
+    {
+      "Identity": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\Pesquisa.js",
+      "SourceId": "ProjetoCinemaAthon",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\",
+      "BasePath": "_content/ProjetoCinemaAthon",
+      "RelativePath": "js/Pesquisa.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Pesquisa.js"
     },
     {
       "Identity": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\site.js",

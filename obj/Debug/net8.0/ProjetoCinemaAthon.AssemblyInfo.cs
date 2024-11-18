@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjetoCinemaAthon")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38bf5e4a5c242a3a1c27c0c963f6fc82d4bcc085")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5df319533236689d774cec1981a124c29b40e0f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjetoCinemaAthon")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjetoCinemaAthon")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

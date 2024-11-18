@@ -1,0 +1,57 @@
+﻿@model dynamic
+
+@{
+    var lista = Json.Serialize(Model);
+    ViewData["Title"] = "Index";
+}
+<script src="~/js/Pesquisa.js"></script>
+<script> var itens = @Html.Raw(lista); </script>
+
+
+<style>
+    *{
+        // border: 1px solid black;
+    }
+</style>
+<!-- setType(Categoria, Indice, Procura) -->
+<div class="align-content-center" style="margin-bottom:5px">
+    <label class="" style="font-weight:bold">Tipo de pesquisa para filmes: </label>
+
+    <input type="radio" class="btn-check" name="options-base" id="option1" autocomplete="off" checked>
+    <label class="btn btn-outline-primary" for="option1" onclick="setType(1, 1, 'titulo')">Título</label>
+
+    <input type="radio" class="btn-check" name="options-base" id="option2" autocomplete="off">
+    <label class="btn btn-outline-primary" for="option2" onclick="setType(2, 2, '')">Artista</label>
+
+    <input type="radio" class="btn-check" name="options-base" id="option3" autocomplete="off">
+    <label class="btn btn-outline-primary" for="option3" onclick="setType(3, 3)">Gênero</label>
+</div>
+
+<div class="align-content-center" style="margin-bottom:5px">
+    <label class="" style="font-weight:bold">Tipo de pesquisa para artistas: </label>
+
+    <input type="radio" class="btn-check" name="options-base" id="option4" autocomplete="off">
+    <label class="btn btn-outline-primary" for="option4" onclick="setType(2, 1)">Nome</label>
+
+    <input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off">
+    <label class="btn btn-outline-primary" for="option5" onclick="setType(2, 4)">País de nascimento</label>
+</div>
+
+
+
+    <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+        </span>
+    <input id="inputSearch" type="text" class="form-control" list="frutas"
+    aria-describedby="addon-wrapping" placeholder="Digite o nome do filme">
+    <datalist id="frutas">
+        <option value="Maçã"></option>
+        <option value="Banana"></option>
+        <option value="Laranja"></option>
+        <option value="Manga"></option>
+        <option value="Uva"></option>
+    </datalist>
+    </div>

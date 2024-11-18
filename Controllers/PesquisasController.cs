@@ -24,9 +24,9 @@ namespace ProjetoCinemaAthon.Controllers
         {
             var filmes = await _context.RegistrarFilme
         .Include(f => f.VinculoFilmeAtor)
-            .ThenInclude(v => v.CadastroAtor) // Inclui os atores associados
+            .ThenInclude(v => v.CadastroAtor)
         .Include(f => f.VinculoFilmeGenero)
-            .ThenInclude(v => v.CadastroGenero) // Inclui os gêneros associados
+            .ThenInclude(v => v.CadastroGenero)
         .Select(f => new
         {
             f.Id,
@@ -34,14 +34,14 @@ namespace ProjetoCinemaAthon.Controllers
             f.DtLancamento,
             f.LinkCapa,
             Artistas = f.VinculoFilmeAtor
-                .Where(v => v.RegistrarFilmeId == f.Id) // Filtra os atores vinculados ao filme específico
+                .Where(v => v.RegistrarFilmeId == f.Id)
                 .Select(v => v.CadastroAtor.Nome)
-                .Distinct() // Remove duplicatas
+                .Distinct()
                 .ToList(),
             Generos = f.VinculoFilmeGenero
-                .Where(g => g.RegistrarFilmeId == f.Id) // Filtra os gêneros vinculados ao filme específico
+                .Where(g => g.RegistrarFilmeId == f.Id)
                 .Select(g => g.CadastroGenero.Nome)
-                .Distinct() // Remove duplicatas
+                .Distinct()
                 .ToList()
         })
         .ToListAsync();

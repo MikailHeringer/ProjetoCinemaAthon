@@ -13,8 +13,12 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\Pesquisa.js",
-      "PackagePath": "staticwebassets\\js\\Pesquisa.js"
+      "Id": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\Buscar.js",
+      "PackagePath": "staticwebassets\\js\\Buscar.js"
+    },
+    {
+      "Id": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\ConfigBuscar.js",
+      "PackagePath": "staticwebassets\\js\\ConfigBuscar.js"
     },
     {
       "Id": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\divPersonagens.js",

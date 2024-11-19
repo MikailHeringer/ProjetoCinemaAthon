@@ -2,8 +2,6 @@
 
 let modelo = "filme", indice = "titulo", texto = "";
 
-$(document).ready(setSubs());
-
 function setType(categoria, procura, id) {
     modelo = categoria;
     indice = procura;
@@ -46,7 +44,14 @@ function setSubs(type = "titulo") {
             itens.filme.forEach(item => {
                     createSubs(subs, item.titulo);
                 });
-        break;
+            break;
+
+
+
+
+
+
+
         case "artistas":
             ats = [];
             itens.filme.forEach(pgFilme => {

@@ -35,6 +35,10 @@ function createCards(titulo, image) {
 }
 
 function search(pesquisa) {
+    if(pesquisa == ""){
+        texto = "";
+        document.getElementById("cards").innerHTML = "";
+    }
     if (pesquisa != texto) {
         document.getElementById("cards").innerHTML = "";
         texto = pesquisa;
@@ -46,17 +50,18 @@ function search(pesquisa) {
 
             case "titulo":
                 itens.filme.forEach(item => {
-                    if (pesquisa == item.titulo) {
+                    if (compare(pesquisa, item.titulo)) {
                         createCards(item.titulo, item.linkCapa);
                     }
                 });
                 break;
 
-            case "artistas":            
+            case "artistas":
                 itens.filme.forEach(pgFilme => {
                     let find = false;
                     pgFilme.artistas.forEach(item => {
-                        if (pesquisa == item) {
+                        if (compare(pesquisa, item)) {
+                            
                             find = true;
                         }
                     });
@@ -70,7 +75,7 @@ function search(pesquisa) {
                 itens.filme.forEach(pgFilme => {
                     let find = false;
                     pgFilme.generos.forEach(item => {
-                        if (pesquisa == item) {
+                        if (compare(pesquisa, item)) {
                             find = true;
                         }
                     });
@@ -84,7 +89,7 @@ function search(pesquisa) {
 
             case "nome":
                 itens.artista.forEach(item => {
-                    if (pesquisa == item.nome) {
+                    if (compare(pesquisa, item.nome)) {
                         createCards(item.nome, item.fotoArtista);
                     }
                 });
@@ -92,14 +97,18 @@ function search(pesquisa) {
 
             case "paisNascimento":
                 itens.artista.forEach(item => {
-                    if (pesquisa == item.paisNascimento) {
-                        if (find) {
+                    if (compare(pesquisa, item.paisNascimento)) {
                             createCards(item.nome, item.fotoArtista);
-                        }
                     }
                 });
                 break;
             default: break;
         }
     }
+}
+
+function compare(pesquisa, nome) {
+    pesquisa = pesquisa.toLowerCase();
+    nome = nome.toLowerCase();
+    return (pesquisa === nome.substr(0, pesquisa.length)) ? true : false;
 }

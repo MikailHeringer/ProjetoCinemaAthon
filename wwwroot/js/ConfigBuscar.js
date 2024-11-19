@@ -5,7 +5,6 @@ let modelo = "filme", indice = "titulo", texto = "";
 function setType(categoria, procura, id) {
     modelo = categoria;
     indice = procura;
-
     let msg = "Digite o nome do filme";
     switch (id) {
         case 1:
@@ -28,11 +27,16 @@ function setType(categoria, procura, id) {
             msg = "Digite o nome do pais";
             setSubs("paisNascimento");
             break;
+        default: break;
     }
+
+    texto = "";
+    document.getElementById("cards").innerHTML = "";
 
     let impSearch = document.getElementById("inputSearch");
     impSearch.setAttribute("placeholder", msg);
     impSearch.value = "";
+
 }
 
 function setSubs(type = "titulo") {
@@ -45,13 +49,6 @@ function setSubs(type = "titulo") {
                     createSubs(subs, item.titulo);
                 });
             break;
-
-
-
-
-
-
-
         case "artistas":
             ats = [];
             itens.filme.forEach(pgFilme => {

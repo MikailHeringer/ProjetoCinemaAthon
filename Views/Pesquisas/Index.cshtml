@@ -14,7 +14,25 @@
 <style>
     *{
         // border: 1px solid black;
-    }
+     }
+        .sumiu{
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.5s ease, transform 0.5s ease;
+        }
+        .apareceu{
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1.5s ease forwards;
+        }
+
+        @@keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(15px);
+            }
+        }
+   
 </style>
 <body onload="setSubs()">
 <!-- setType(Categoria, Indice_Procura, id) -->
@@ -49,9 +67,6 @@
 
 <input id="inputSearch" type="text" class="form-control" list="subs"
     aria-describedby="addon-wrapping" placeholder="Digite o nome do filme"
-    onkeydown="search(this.value)"
-    onkeyup="search(this.value)"
-    onchange="search(this.value)"
     autocomplete="off">
 
 <datalist id="subs"> </datalist>

@@ -65,132 +65,132 @@ namespace ProjetoCinemaAthon.Controllers
         }
 
         // GET: Pesquisas/Details/5
-       /* public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        /* public async Task<IActionResult> Details(int? id)
+         {
+             if (id == null)
+             {
+                 return NotFound();
+             }
 
-            var pesquisa = await _context.Pesquisa
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (pesquisa == null)
-            {
-                return NotFound();
-            }
+             var pesquisa = await _context.Pesquisa
+                 .FirstOrDefaultAsync(m => m.Id == id);
+             if (pesquisa == null)
+             {
+                 return NotFound();
+             }
 
-            return View(pesquisa);
-        }
+             return View(pesquisa);
+         }
 
-        // GET: Pesquisas/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
+         // GET: Pesquisas/Create
+         public IActionResult Create()
+         {
+             return View();
+         }
 
-        // POST: Pesquisas/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome")] Pesquisa pesquisa)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(pesquisa);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(pesquisa);
-        }
+         // POST: Pesquisas/Create
+         // To protect from overposting attacks, enable the specific properties you want to bind to.
+         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         [HttpPost]
+         [ValidateAntiForgeryToken]
+         public async Task<IActionResult> Create([Bind("Id,Nome")] Pesquisa pesquisa)
+         {
+             if (ModelState.IsValid)
+             {
+                 _context.Add(pesquisa);
+                 await _context.SaveChangesAsync();
+                 return RedirectToAction(nameof(Index));
+             }
+             return View(pesquisa);
+         }
 
-        // GET: Pesquisas/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+         // GET: Pesquisas/Edit/5
+         public async Task<IActionResult> Edit(int? id)
+         {
+             if (id == null)
+             {
+                 return NotFound();
+             }
 
-            var pesquisa = await _context.Pesquisa.FindAsync(id);
-            if (pesquisa == null)
-            {
-                return NotFound();
-            }
-            return View(pesquisa);
-        }
+             var pesquisa = await _context.Pesquisa.FindAsync(id);
+             if (pesquisa == null)
+             {
+                 return NotFound();
+             }
+             return View(pesquisa);
+         }
 
-        // POST: Pesquisas/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome")] Pesquisa pesquisa)
-        {
-            if (id != pesquisa.Id)
-            {
-                return NotFound();
-            }
+         // POST: Pesquisas/Edit/5
+         // To protect from overposting attacks, enable the specific properties you want to bind to.
+         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+         [HttpPost]
+         [ValidateAntiForgeryToken]
+         public async Task<IActionResult> Edit(int id, [Bind("Id,Nome")] Pesquisa pesquisa)
+         {
+             if (id != pesquisa.Id)
+             {
+                 return NotFound();
+             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(pesquisa);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PesquisaExists(pesquisa.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(pesquisa);
-        }
+             if (ModelState.IsValid)
+             {
+                 try
+                 {
+                     _context.Update(pesquisa);
+                     await _context.SaveChangesAsync();
+                 }
+                 catch (DbUpdateConcurrencyException)
+                 {
+                     if (!PesquisaExists(pesquisa.Id))
+                     {
+                         return NotFound();
+                     }
+                     else
+                     {
+                         throw;
+                     }
+                 }
+                 return RedirectToAction(nameof(Index));
+             }
+             return View(pesquisa);
+         }
 
-        // GET: Pesquisas/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+         // GET: Pesquisas/Delete/5
+         public async Task<IActionResult> Delete(int? id)
+         {
+             if (id == null)
+             {
+                 return NotFound();
+             }
 
-            var pesquisa = await _context.Pesquisa
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (pesquisa == null)
-            {
-                return NotFound();
-            }
+             var pesquisa = await _context.Pesquisa
+                 .FirstOrDefaultAsync(m => m.Id == id);
+             if (pesquisa == null)
+             {
+                 return NotFound();
+             }
 
-            return View(pesquisa);
-        }
+             return View(pesquisa);
+         }
 
-        // POST: Pesquisas/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var pesquisa = await _context.Pesquisa.FindAsync(id);
-            if (pesquisa != null)
-            {
-                _context.Pesquisa.Remove(pesquisa);
-            }
+         // POST: Pesquisas/Delete/5
+         [HttpPost, ActionName("Delete")]
+         [ValidateAntiForgeryToken]
+         public async Task<IActionResult> DeleteConfirmed(int id)
+         {
+             var pesquisa = await _context.Pesquisa.FindAsync(id);
+             if (pesquisa != null)
+             {
+                 _context.Pesquisa.Remove(pesquisa);
+             }
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+             await _context.SaveChangesAsync();
+             return RedirectToAction(nameof(Index));
+         }
 
-        private bool PesquisaExists(int id)
-        {
-            return _context.Pesquisa.Any(e => e.Id == id);
-        }*/
+         private bool PesquisaExists(int id)
+         {
+             return _context.Pesquisa.Any(e => e.Id == id);
+         }*/
     }
 }

@@ -39,6 +39,10 @@ namespace ProjetoCinemaAthon.Controllers
                 .Include(f => f.VinculoFilmeGenero)
                 .ThenInclude(g => g.CadastroGenero)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
+
+
+
             if (registrarFilme == null)
             {
                 return NotFound();
@@ -147,6 +151,8 @@ namespace ProjetoCinemaAthon.Controllers
                 {
                     _context.Update(registrarFilme);
                     await _context.SaveChangesAsync();
+
+
                     var vinculosAtor = _context.VinculoFilmeAtor.Where(v => v.RegistrarFilmeId == registrarFilme.Id).ToList();
                     foreach (var vinculo in vinculosAtor)
                     {
@@ -154,6 +160,7 @@ namespace ProjetoCinemaAthon.Controllers
                     }
 
                     var vinculosGeneros = _context.VinculoFilmeGenero.Where(v => v.RegistrarFilmeId == registrarFilme.Id).ToList();
+
                     foreach (var vinculo in vinculosGeneros)
                     {
                         _context.VinculoFilmeGenero.Remove(vinculo);

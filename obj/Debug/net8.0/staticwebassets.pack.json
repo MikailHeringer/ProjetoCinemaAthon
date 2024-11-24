@@ -33,6 +33,14 @@
       "PackagePath": "staticwebassets\\js\\divPersonagensEdit.js"
     },
     {
+      "Id": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\fuse.js",
+      "PackagePath": "staticwebassets\\js\\fuse.js"
+    },
+    {
+      "Id": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\fuseSearch.js",
+      "PackagePath": "staticwebassets\\js\\fuseSearch.js"
+    },
+    {
       "Id": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

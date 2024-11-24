@@ -6,9 +6,10 @@
     }
 }
 
-function createCards(titulo, image) {
+function createCards(titulo, image, id, cat = 1) {
     let col = document.createElement("div");
-    col.setAttribute("class", "col-md-2 divName showDetails apareceu");
+    col.setAttribute("class", "col-md-2 divName showDetails");
+    col.setAttribute("onclick", "showDetalhes("+id+","+cat+")");
 
     let card = document.createElement("div");
     card.setAttribute("class", "card");
@@ -22,6 +23,8 @@ function createCards(titulo, image) {
     p.innerHTML = curlName(titulo);
 
     let img = document.createElement("img");
+    img.style.width = "222px";
+    img.style.height = "333px";
     img.src = image;
 
     cardBody.appendChild(p);
@@ -30,77 +33,6 @@ function createCards(titulo, image) {
     col.appendChild(card);
 
     return col;
-}
-
-
-function search(pesquisa) {
-    if (pesquisa === "") {
-        texto = "";
-        efeitoRemover(() => {
-            document.getElementById("cards").innerHTML = "";
-        });
-    }
-
-    if (pesquisa !== texto) {
-        texto = pesquisa;
-
-        const fragDOM = document.createDocumentFragment();
-        const cardsGrup = document.getElementById("cards");
-        cardsGrup.innerHTML = "";
-        
-        
-
-        switch (indice) {
-            case "titulo":
-                itens.filme.forEach(item => {
-                    if (compare(pesquisa, item.titulo)) {
-                        fragDOM.appendChild(createCards(item.titulo, item.linkCapa));
-                    }
-                });
-                break;
-
-            case "artistas":
-                itens.filme.forEach(pgFilme => {
-                    if (pgFilme.artistas.some(artista => compare(pesquisa, artista))) {
-                        fragDOM.appendChild(createCards(pgFilme.titulo, pgFilme.linkCapa));
-                    }
-                });
-                break;
-
-            case "generos":
-                itens.filme.forEach(pgFilme => {
-                    if (pgFilme.generos.some(genero => compare(pesquisa, genero))) {
-                        fragDOM.appendChild(createCards(pgFilme.titulo, pgFilme.linkCapa));
-                    }
-                });
-                break;
-
-            case "nome":
-                itens.artista.forEach(item => {
-                    if (compare(pesquisa, item.nome)) {
-                        fragDOM.appendChild(createCards(item.nome, item.fotoArtista));
-                    }
-                });
-                break;
-
-            case "paisNascimento":
-                itens.artista.forEach(item => {
-                    if (compare(pesquisa, item.paisNascimento)) {
-                        fragDOM.appendChild(createCards(item.nome, item.fotoArtista));
-                    }
-                });
-                break;
-
-            default:
-                break;
-        }
-
-            cardsGrup.appendChild(fragDOM);
-    }
-}
-
-function compare(pesquisa, nome) {
-    return nome.toLowerCase().startsWith(pesquisa.toLowerCase());
 }
 
 function atrasarBusca(func, wait) {
@@ -117,16 +49,60 @@ document.getElementById("inputSearch").addEventListener("input", (e) => {
     tempoBusca(e.target.value);
 });
 
+const opcoes = {
+    includeScore: true,
+    threshold: 0.3,
+    keys: []
+};
 
+function searchEngine(pesquisa, data, key = "titulo") {
+    switch (key) {
+        case "artistas": opcoes.threshold = 0.2;
+            break;
+        case "generos": opcoes.threshold = 0;
+            break;
+        case "nome": opcoes.threshold = 0.2;
+            break;
+        case "paisNascimento": opcoes.threshold = 0.2;
+            break;
+        default : break;
+    }
 
-function efeitoRemover(callback) {
-    const cards = document.querySelectorAll("#cards .col-md-2");
+    opcoes.keys = [key];
+    let fuse = new Fuse(data, opcoes);
+    return fuse.search(pesquisa)
+}
 
-    cards.forEach(card => {
-        card.classList.add("sumiu");
-    });
+function search(pesquisa) {
+    if (pesquisa !== texto) {
+        texto = pesquisa;
 
-    setTimeout(() => {
-        callback();
-    }, 500);
+        let data = (modelo == "filme") ? itens.filme : itens.artista;
+
+        const fragDOM = document.createDocumentFragment();
+        const cardsGrup = document.getElementById("cards");
+        cardsGrup.innerHTML = "";
+        res = searchEngine(pesquisa, data, categoria);
+        switch (modelo) {
+            case "filme":
+                res.forEach(filtro => {
+                        fragDOM.appendChild(createCards(filtro.item.titulo, filtro.item.linkCapa, filtro.item.id));
+                });
+                break;
+
+            case "artista":
+                res.forEach(filtro => {
+                        fragDOM.appendChild(createCards(filtro.item.nome, filtro.item.fotoArtista, filtro.item.id, 2));
+                });
+                break;
+
+            default:
+                break;
+        }
+
+        cardsGrup.appendChild(fragDOM);
+        showLink();
+
+        
+    }
 }

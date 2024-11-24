@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,15 @@ namespace ProjetoCinemaAthon.Controllers
         // GET: CadastroGeneros
         public async Task<IActionResult> Index()
         {
+            if (TempData["ResId"] != null)
+            {
+                int resId = (int)TempData["ResId"];
+                if (resId == 2)
+                {
+                    ViewBag.Message = "false";
+                }
+               
+            }
             return View(await _context.CadastroGenero.ToListAsync());
         }
 
@@ -44,6 +54,7 @@ namespace ProjetoCinemaAthon.Controllers
         }
 
         // GET: CadastroGeneros/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -58,6 +69,14 @@ namespace ProjetoCinemaAthon.Controllers
         {
             if (ModelState.IsValid)
             {
+                bool duplicado = await _context.CadastroGenero
+                    .AnyAsync(g => g.Nome.ToLower() == cadastroGenero.Nome.ToLower());
+                if (duplicado)
+                {
+                    TempData["ResId"] = 2;
+                    return RedirectToAction(nameof(Index));
+                }
+
                 _context.Add(cadastroGenero);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -66,6 +85,7 @@ namespace ProjetoCinemaAthon.Controllers
         }
 
         // GET: CadastroGeneros/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -117,6 +137,7 @@ namespace ProjetoCinemaAthon.Controllers
         }
 
         // GET: CadastroGeneros/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

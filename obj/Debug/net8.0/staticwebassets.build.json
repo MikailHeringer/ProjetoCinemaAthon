@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Yj00by+kuXkTryLlCKUDeV2CNRU6P8/OVxk+MXvy+vA=",
+  "Hash": "1XmVStlo8W5eVAAm3ntMVX/wRWSQRQqp7YgxI1+HOnk=",
   "Source": "ProjetoCinemaAthon",
   "BasePath": "_content/ProjetoCinemaAthon",
   "Mode": "Default",
@@ -1233,6 +1233,25 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\iconeAntigo.ico",
+      "SourceId": "ProjetoCinemaAthon",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\",
+      "BasePath": "_content/ProjetoCinemaAthon",
+      "RelativePath": "iconeAntigo.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\iconeAntigo.ico"
+    },
+    {
       "Identity": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\Backup Buscar.js",
       "SourceId": "ProjetoCinemaAthon",
       "SourceType": "Discovered",
@@ -1383,25 +1402,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\fuse.js"
-    },
-    {
-      "Identity": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\fuseSearch.js",
-      "SourceId": "ProjetoCinemaAthon",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\",
-      "BasePath": "_content/ProjetoCinemaAthon",
-      "RelativePath": "js/fuseSearch.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\fuseSearch.js"
     },
     {
       "Identity": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\site.js",

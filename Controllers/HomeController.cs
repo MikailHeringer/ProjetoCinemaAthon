@@ -21,7 +21,7 @@ namespace ProjetoCinemaAthon.Controllers
         {
             if (TempData["ResId"] != null)
             {
-                int resId = (int)TempData["ResId"];
+                int resId = (int) TempData["ResId"];
                 if (resId == 1)
                 {
                     ViewBag.Message = "true";

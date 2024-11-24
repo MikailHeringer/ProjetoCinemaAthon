@@ -6,9 +6,10 @@ namespace ProjetoCinemaAthon.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O nome é obrigatório.")]
         public string? Nome { get; set; }
 
+        [Required(ErrorMessage = "A data de nascimento é obrigatório.")]
         [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
         public DateTime DtNascimento { get; set; }

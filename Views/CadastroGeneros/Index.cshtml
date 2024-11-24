@@ -7,6 +7,9 @@
 <p>
     <a asp-action="Create" class="btn btn-primary">Adicionar Novo</a>
 </p>
+
+<p> <strong>@Model.Count()</strong>: Generos cadastrados</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -24,12 +27,63 @@
             </td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                        <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                        <a class="btn btn-outline-primary" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                        <a class="btn btn-outline-primary" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
                     </div>
                 </td>
         </tr>
 }
     </tbody>
 </table>
+
+<script>
+
+    function setStyle() {
+        let alert = document.getElementsByClassName("msgBox")[0];
+        window.setTimeout(() => {
+            alert.setAttribute("class", "msgBox ON");
+        }, 1000);
+
+        window.setTimeout(() => {
+            alert.setAttribute("class", "msgBox OFF");
+        }, 5000);
+    };
+</script>
+
+<style>
+    .msgBox{
+        position: fixed;
+        top: 6.5%;
+        left: 0.2%;
+        opacity: 0;
+    }
+    .ON{
+        position: fixed;
+        top: 6.5%;
+        left: 0.2%;
+        opacity:1;
+        transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    .OFF {
+        position: fixed;
+        top: 6.5%;
+        left: 0.2%;
+        opacity: 0;
+        transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+</style>
+
+<div class="msgBox">
+    @if (ViewBag.Message != null)
+    {
+        if (ViewBag.Message == "false")
+        {
+            <div class="alert alert-danger" role="alert">
+                Gênero já cadastrado.
+            </div>
+            <script>setStyle();</script>
+        }
+    }
+</div>

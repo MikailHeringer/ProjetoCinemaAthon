@@ -6,7 +6,7 @@ namespace ProjetoCinemaAthon.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O nome é obrigatório.")]
         public string? Nome { get; set; }
 
         public ICollection<VinculoFilmeGenero>? VinculoFilmeGenero { get; set; }

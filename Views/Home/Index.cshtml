@@ -7,6 +7,7 @@
 }
 
 <script>
+
     function setStyle() {
         let alert = document.getElementsByClassName("msgBox")[0];
         window.setTimeout(() => {
@@ -25,38 +26,7 @@
             return nome;
         }
     }
-
-    function showDetalhes(id) {
-        let url = document.location.href;
-        document.location.href = url + "RegistrarFilmes/Details/" + id;
-    }
-
-    const elements = document.querySelectorAll(".showDetails");
-    const detalhes = document.getElementById("detalhes");
-
-    elements.forEach(element => {
-        element.addEventListener("mousemove", (e) => {
-            detalhes.classList.remove("displayStyleOut");
-            detalhes.classList.add("text-center", "displayStyle");
-            detalhes.style.top = (e['pageY'] - 35) + "px";
-            detalhes.style.left = (e['pageX'] + 10) + "px";
-        });
-
-        element.addEventListener("mouseout", () => {
-            detalhes.classList.remove("text-center", "displayStyle");
-            detalhes.classList.add("displayStyleOut");
-            detalhes.style.top = "1px";
-            detalhes.style.left = "1px";
-        });
-    });
-
 </script>
-
-<style>
-    *{
-         //border:1px solid black;
-    }
-</style>
 
 <div class="container">
         <div class="col-md-25">
@@ -132,3 +102,30 @@
 <!--<p>Total de filmes cadastrados: @filmes.Count</p>-->
 
 <div class="text-center displayStyleOut" id="detalhes">Exibir detalhes</div>
+
+<script>
+    function showDetalhes(id) {
+        let url = document.location.href;
+        document.location.href = url + "RegistrarFilmes/Details/" + id;
+    }
+
+    const elements = document.querySelectorAll(".showDetails");
+    const detalhes = document.getElementById("detalhes");
+
+    elements.forEach(element => {
+        element.addEventListener("mousemove", (e) => {
+            detalhes.classList.remove("displayStyleOut");
+            detalhes.classList.add("text-center", "displayStyle");
+            detalhes.style.top = (e['pageY'] - 35) + "px";
+            detalhes.style.left = (e['pageX'] + 10) + "px";
+        });
+
+        element.addEventListener("mouseout", () => {
+            detalhes.classList.remove("text-center", "displayStyle");
+            detalhes.classList.add("displayStyleOut");
+            detalhes.style.top = "1px";
+            detalhes.style.left = "1px";
+        });
+    });
+
+</script>

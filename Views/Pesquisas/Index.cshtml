@@ -8,36 +8,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
 <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+<script src="~/js/fuse.js"></script>
 <script> var itens = @Html.Raw(lista); </script>
-<script src="~/js/fuseSearch.js"></script>
 
 
 <style>
     *{
         // border: 1px solid black;
      }
-        .sumiu{
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1.5s ease, transform 0.5s ease;
-        }
-        .apareceu{
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 1.5s ease forwards;
-        }
-
-        @@keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(15px);
-            }
-        }
-   
 </style>
-<body onload="setSubs()">
-<!-- setType(Categoria, Indice_Procura, id) -->
+<body>
 <div class="align-content-center" style="margin-bottom:5px">
     <label class="" style="font-weight:bold">Pesquisa por filmes: </label>
 
@@ -70,8 +50,6 @@
 <input id="inputSearch" type="text" class="form-control" list="subs"
     aria-describedby="addon-wrapping" placeholder="Digite o nome do filme"
     autocomplete="off">
-
-<datalist id="subs"> </datalist>
 </div>
 
 <hr />
@@ -81,19 +59,6 @@
     <div class="col-md-25">
         <div class="row" id="cards">
 
-            <!-- Modelo para duplicar 
-                <div class="col-md-2 divName showDetails">
-                    <div class="card" style="width: 14rem;">
-                        <div class="card-body">
-                            <p class="card-text">
-                                Nome do filme d
-                            </p>
-                        </div>
-                        <img src="https://br.web.img3.acsta.net/c_150_200/img/40/27/4027cc2b52f4759c444e28c753ae0b2e.jpg" class="card-img-top" style="height:300px;">
-                    </div>
-                </div>
-             Final modelo -->
-
         </div>
     </div>
 </div>
@@ -102,3 +67,35 @@
 </body>
 <script src="~/js/ConfigBuscar.js"></script>
 <script src="~/js/Buscar.js"></script>
+
+
+<div class="text-center displayStyleOut" id="detalhes">Exibir detalhes</div>
+
+<script>
+
+    function showDetalhes(id, loc = 1) {
+        loc = (loc == 1) ? "RegistrarFilmes" : "CadastroAtores";
+        let url = document.location.origin;
+        document.location.href = url +"/"+ loc + "/Details/" + id;
+    }
+    function showLink(){
+        const elements = document.querySelectorAll(".showDetails");
+        const detalhes = document.getElementById("detalhes");
+
+        elements.forEach(element => {
+            element.addEventListener("mousemove", (e) => {
+                detalhes.classList.remove("displayStyleOut");
+                detalhes.classList.add("text-center", "displayStyle");
+                detalhes.style.top = (e['pageY'] - 35) + "px";
+                detalhes.style.left = (e['pageX'] + 10) + "px";
+            });
+
+            element.addEventListener("mouseout", () => {
+                detalhes.classList.remove("text-center", "displayStyle");
+                detalhes.classList.add("displayStyleOut");
+                detalhes.style.left = "1px";
+                detalhes.style.top = "1px";
+            });
+        });
+    }
+</script>

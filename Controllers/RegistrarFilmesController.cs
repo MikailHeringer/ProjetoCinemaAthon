@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,15 @@ namespace ProjetoCinemaAthon.Controllers
         // GET: RegistrarFilmes
         public async Task<IActionResult> Index()
         {
+            if (TempData["ResId"] != null)
+            {
+                int resId = (int)TempData["ResId"];
+                if (resId == 2)
+                {
+                    ViewBag.Message = "false";
+                }
+
+            }
             return View(await _context.RegistrarFilme.ToListAsync());
         }
 
@@ -52,6 +62,7 @@ namespace ProjetoCinemaAthon.Controllers
         }
 
         // GET: RegistrarFilmes/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["DadosGeneros"] = new SelectList(_context.CadastroGenero, "Id", "Nome");
@@ -68,6 +79,15 @@ namespace ProjetoCinemaAthon.Controllers
         {
            if (ModelState.IsValid)
             {
+
+                bool duplicado = await _context.RegistrarFilme
+                    .AnyAsync(g => g.Titulo.ToLower() == registrarFilme.Titulo.ToLower());
+                if (duplicado)
+                {
+                    TempData["ResId"] = 2;
+                    return RedirectToAction(nameof(Index));
+                }
+
                 _context.Add(registrarFilme);
                 await _context.SaveChangesAsync();
 
@@ -109,6 +129,7 @@ namespace ProjetoCinemaAthon.Controllers
         }
 
         // GET: RegistrarFilmes/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -221,6 +242,7 @@ namespace ProjetoCinemaAthon.Controllers
         }
 
         // GET: RegistrarFilmes/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

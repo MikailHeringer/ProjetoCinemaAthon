@@ -4,7 +4,26 @@
     ViewData["Title"] = "Create";
 }
 
+<script src="~/js/BuscarFoto.js" ></script>
+<script> let foto;
+    async function pesquisarFoto(nome){
+        let nomeFoto = JSON.parse(await searchPhoto(nome)).results[0].profile_path;
+        foto = "https://media.themoviedb.org/t/p/w300_and_h450_bestv2" + nomeFoto;
+        if(foto != null){
+            document.getElementsByClassName("sImagem")[0].src = foto;
+            document.getElementsByClassName("imageShow")[0].style.display = "block";
+        }
+    }
+    function setUrl(){
+        document.getElementsByClassName("fotoArtista")[0].value = foto;
+    }
+</script>
 
+<style>
+    *{
+       // border:1px solid black;
+    }
+</style>
 
 <h1>Cadastrar novo artista</h1>
 <hr />
@@ -14,7 +33,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
+                <input asp-for="Nome" onchange="pesquisarFoto(this.value)"class="form-control inputName" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -29,18 +48,27 @@
             </div>
             <div class="form-group">
                 <label asp-for="FotoArtista" class="control-label"></label>
-                <input asp-for="FotoArtista" class="form-control" />
+                <input asp-for="FotoArtista" class="form-control fotoArtista" />
                 <span asp-validation-for="FotoArtista" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+                 <a asp-action="Index">Back to List</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div class="col-md-2 imageShow" style="display:none">
+        <div class="row justify-content-center">
+            <img src="" class="img-fluid sImagem">
+        </div>
+        <div class="row text-center">
+            <h5>Sugestão de foto</h5>
+        </div>
+        <div class="row row d-flex justify-content-center">
+            <button type="button" class="btn btn-outline-primary" onclick="setUrl()" style="max-width: 200px;">Adicionar</button>
+        </div>
+        
+    </div>
 </div>
 
 @section Scripts {

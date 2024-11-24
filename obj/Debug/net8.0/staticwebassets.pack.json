@@ -21,6 +21,14 @@
       "PackagePath": "staticwebassets\\js\\Buscar.js"
     },
     {
+      "Id": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\BuscarFoto.js",
+      "PackagePath": "staticwebassets\\js\\BuscarFoto.js"
+    },
+    {
+      "Id": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\ChoiseButton.js",
+      "PackagePath": "staticwebassets\\js\\ChoiseButton.js"
+    },
+    {
       "Id": "E:\\OneDrive\\Athon\\4ADS\\ASP NET\\ProjetoCinemaAthon\\wwwroot\\js\\ConfigBuscar.js",
       "PackagePath": "staticwebassets\\js\\ConfigBuscar.js"
     },

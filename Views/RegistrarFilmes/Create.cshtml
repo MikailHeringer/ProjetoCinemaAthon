@@ -15,12 +15,14 @@
 <script>
     let foto, jsonn;
     async function pesquisarFoto(nome) {
-        let nomeFoto = JSON.parse(await searchPhoto(nome, "movie")).results[0].poster_path;
-        jsonn = JSON.parse(await searchPhoto(nome, "movie"));
-        foto = "https://media.themoviedb.org/t/p/w300_and_h450_bestv2" + nomeFoto;
-        if (foto != null) {
-            document.getElementsByClassName("sImagem")[0].src = foto;
-            document.getElementsByClassName("imageShow")[0].style.display = "block";
+        if (nome != "") {
+            let nomeFoto = JSON.parse(await searchPhoto(nome, "movie")).results[0].poster_path;
+            jsonn = JSON.parse(await searchPhoto(nome, "movie"));
+            foto = "https://media.themoviedb.org/t/p/w300_and_h450_bestv2" + nomeFoto;
+            if (foto != null && nomeFoto != null) {
+                document.getElementsByClassName("sImagem")[0].src = foto;
+                document.getElementsByClassName("imageShow")[0].style.display = "block";
+            }
         }
     }
     function setUrl() {

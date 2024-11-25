@@ -12,7 +12,7 @@ namespace ProjetoCinemaAthon.Controllers
 
         public JsonResult BuscarImagens(string query, string type)
         {
-            var url = $"https://api.themoviedb.org/3/search/{type}?query={query}&api_key={apiKey}";
+            var url = $"https://api.themoviedb.org/3/search/{type}?query={query.Replace(" ", "-")}&api_key={apiKey}";
             using (var client = new HttpClient())
             {
                 var response = client.GetStringAsync(url).Result;
